@@ -1,9 +1,14 @@
-import { hello } from '../index.js'
+import { filename, dirname } from '../index.js'
 
-describe('index', () => {
-  describe('hello', () => {
-    test('should return message', () => {
-      expect(hello()).toBe('Hello')
+describe('utils', () => {
+  describe('filename', () => {
+    test('should return a file path', () => {
+      expect(filename({ url: 'file:///dir/file.txt' })).toBe('/dir/file.txt')
+    })
+  })
+  describe('dirname', () => {
+    test('should return a directory path', () => {
+      expect(dirname({ url: 'file:///dir/file.txt' })).toBe('/dir')
     })
   })
 })
