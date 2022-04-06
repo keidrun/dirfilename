@@ -1,3 +1,3 @@
-# where-are-we
+# dirfilename
 
 Substitues for `__dirname` and `__filename` when using esm.

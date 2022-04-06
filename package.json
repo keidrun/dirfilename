@@ -1,5 +1,5 @@
 {
-  "name": "where-are-we",
+  "name": "dirfilename",
   "version": "0.0.0-development",
   "description": "Substitues for `__dirname` and `__filename` when using esm.",
   "type": "module",
