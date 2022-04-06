@@ -1,6 +1,6 @@
 {
   "name": "where-are-we",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Substitues for `__dirname` and `__filename` when using esm.",
   "type": "module",
   "main": "./build/index.js",
@@ -20,13 +20,19 @@
     "test-clear": "jest --clearCache",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "build-clean": "rimraf ./build",
-    "build": "tsc"
+    "build": "tsc",
+    "semantic-release": "semantic-release"
   },
   "lint-staged": {
     "*.{js,ts}": [
       "npm run lint",
       "npm run format",
       "npm run test"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
     ]
   },
   "engines": {
@@ -40,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keidrun/where-are-we.git"
+    "url": "https://github.com/keidrun/where-are-we.git"
   },
   "keywords": [
     "dirname",
@@ -73,6 +79,7 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "semantic-release": "^19.0.2"
   }
 }
