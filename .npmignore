@@ -2,8 +2,12 @@
 **/__tests__/**
 coverage
 src
+.github
+.husky
 
 .editorconfig
+.eslintignore
+.eslintrc.cjs
 .prettierignore
 .prettierrc.json
 .releaserc
