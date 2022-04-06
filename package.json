@@ -24,7 +24,7 @@
     "semantic-release": "semantic-release"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "src/**/*.{js,ts}": [
       "npm run lint",
       "npm run format",
       "npm run test"

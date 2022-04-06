@@ -1,7 +1,6 @@
 {
   "extends": "@tsconfig/node16-strictest-esm/tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "declaration": true,
     "moduleResolution": "node",
     "rootDir": "src",

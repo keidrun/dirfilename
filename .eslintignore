@@ -1,6 +1,7 @@
 /node_modules
 /coverage
 /build
+__tests__
 
 .eslintrc.js
 .eslintrc.cjs
