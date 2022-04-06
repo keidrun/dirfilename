@@ -1,0 +1,78 @@
+{
+  "name": "where-are-we",
+  "version": "0.0.0",
+  "description": "Substitues for `__dirname` and `__filename` when using esm.",
+  "type": "module",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "scripts": {
+    "prepare": "is-ci || husky install",
+    "start": "node --loader ts-node/esm src/index.ts",
+    "lint": "eslint . --cache --fix --ext js,ts",
+    "format": "prettier --write '**/*.{js,ts,json}'",
+    "watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch --coverage",
+    "test-clear": "jest --clearCache",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "build-clean": "rimraf ./build",
+    "build": "tsc"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npm run lint",
+      "npm run format",
+      "npm run test"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "packageManager": "npm@8.5.0",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keidrun/where-are-we.git"
+  },
+  "keywords": [
+    "dirname",
+    "filename",
+    "esm",
+    "import.meta"
+  ],
+  "author": "keidrun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keidrun/where-are-we/issues"
+  },
+  "homepage": "https://github.com/keidrun/where-are-we#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@tsconfig/node16-strictest-esm": "^1.0.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "is-ci": "^3.0.1",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
