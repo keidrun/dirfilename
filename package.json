@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/keidrun/where-are-we.git"
+    "url": "https://github.com/keidrun/dirfilename.git"
   },
   "keywords": [
     "dirname",
@@ -52,9 +52,9 @@
   "author": "keidrun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keidrun/where-are-we/issues"
+    "url": "https://github.com/keidrun/dirfilename/issues"
   },
-  "homepage": "https://github.com/keidrun/where-are-we#readme",
+  "homepage": "https://github.com/keidrun/dirfilename#readme",
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
