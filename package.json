@@ -1,7 +1,7 @@
 {
   "name": "dirfilename",
   "version": "0.0.0-development",
-  "description": "Substitues for `__dirname` and `__filename` when using esm.",
+  "description": "Alternatives to `__dirname` and `__filename` when using ES modules.",
   "type": "module",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -13,12 +13,13 @@
   },
   "scripts": {
     "prepare": "is-ci || husky install",
+    "node": "node --loader ts-node/esm",
     "start": "node --loader ts-node/esm src/index.ts",
     "lint": "eslint . --cache --fix --ext js,ts",
     "format": "prettier --write '**/*.{js,ts,json}'",
-    "watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch --coverage",
-    "test-clear": "jest --clearCache",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "watch": "vitest watch --coverage",
+    "test": "vitest run --coverage",
+    "test-ci": "vitest related src/index.ts --coverage --run",
     "build-clean": "rimraf ./build",
     "build": "tsc",
     "semantic-release": "semantic-release"
@@ -27,7 +28,7 @@
     "src/**/*.{js,ts}": [
       "npm run lint",
       "npm run format",
-      "npm run test"
+      "npm run test-ci"
     ]
   },
   "engines": {
@@ -63,22 +64,21 @@
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@tsconfig/node16-strictest-esm": "^1.0.0",
-    "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
+    "c8": "^7.11.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
     "is-ci": "^3.0.1",
-    "jest": "^27.5.1",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "semantic-release": "^19.0.2",
-    "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "vitest": "^0.14.1"
   }
 }
