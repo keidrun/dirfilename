@@ -15,6 +15,6 @@ npm i dirfilename
 ```typescript
 import { dirname, filename } from 'dirfilename'
 
-const __dirname = dirname(import.meta)
-const __filename = filename(import.meta)
+const __dirname = dirname(import.meta.url)
+const __filename = filename(import.meta.url)
 ```

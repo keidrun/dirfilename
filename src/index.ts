@@ -1,10 +1,17 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-export function filename(importMeta: { url: string }): string {
-  return fileURLToPath(importMeta.url)
+export function filename(url: string | undefined): string | undefined {
+  if (!url) return undefined
+
+  try {
+    return fileURLToPath(url)
+  } catch (error) {
+    return undefined
+  }
 }
 
-export function dirname(importMeta: { url: string }): string {
-  return path.dirname(filename(importMeta))
+export function dirname(url: string | undefined): string | undefined {
+  const file = filename(url)
+  return file ? path.dirname(file) : undefined
 }
