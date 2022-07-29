@@ -5,54 +5,40 @@ import { filename, dirname } from '../index.js'
 describe('index', () => {
   describe('filename', () => {
     test('should return a file path', () => {
-      expect(filename({ url: 'file:///dir/file.txt' })).toBe('/dir/file.txt')
+      expect(filename('file:///dir/file.txt')).toBe('/dir/file.txt')
     })
-    test('should throw an error if provided with empty url', () => {
+    test('should throw an error if provided with wrong url', () => {
       const resultFn = () => {
-        filename({ url: '' })
+        filename('file.txt')
       }
 
       expect(resultFn).toThrow(/Invalid URL/)
     })
-    test('should throw an error if provided with undefined url', () => {
+    test('should throw an error if provided with empty', () => {
       const resultFn = () => {
-        filename({ url: undefined })
+        filename('')
       }
 
-      expect(resultFn).toThrow(/The "path" argument must be of type string or an instance of URL/)
-    })
-    test('should throw an error if provided with null url', () => {
-      const resultFn = () => {
-        filename({ url: null })
-      }
-
-      expect(resultFn).toThrow(/The "path" argument must be of type string or an instance of URL/)
+      expect(resultFn).toThrow(/Invalid URL/)
     })
   })
   describe('dirname', () => {
     test('should return a directory path', () => {
-      expect(dirname({ url: 'file:///dir/file.txt' })).toBe('/dir')
+      expect(dirname('file:///dir/file.txt')).toBe('/dir')
     })
-    test('should throw an error if provided with empty url', () => {
+    test('should throw an error if provided with wront url', () => {
       const resultFn = () => {
-        dirname({ url: '' })
+        dirname('dir/file.txt')
       }
 
       expect(resultFn).toThrow(/Invalid URL/)
     })
-    test('should throw an error if provided with undefined url', () => {
+    test('should throw an error if provided with empty', () => {
       const resultFn = () => {
-        dirname({ url: undefined })
+        dirname('')
       }
 
-      expect(resultFn).toThrow(/The "path" argument must be of type string or an instance of URL/)
-    })
-    test('should throw an error if provided with null url', () => {
-      const resultFn = () => {
-        dirname({ url: null })
-      }
-
-      expect(resultFn).toThrow(/The "path" argument must be of type string or an instance of URL/)
+      expect(resultFn).toThrow(/Invalid URL/)
     })
   })
 })
