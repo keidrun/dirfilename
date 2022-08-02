@@ -15,6 +15,13 @@
       "default": "./build/async/index.js"
     }
   },
+  "typesVersions": {
+    "*": {
+      "async": [
+        "./build/async/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "prepare": "is-ci || husky install",
     "node": "node --loader ts-node/esm",
