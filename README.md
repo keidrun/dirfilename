@@ -18,3 +18,12 @@ import { dirname, filename } from 'dirfilename'
 const __dirname = dirname(import.meta.url)
 const __filename = filename(import.meta.url)
 ```
+
+Or
+
+```typescript
+import { dirname, filename } from 'dirfilename/async'
+
+const __dirname = await dirname(import.meta.url)
+const __filename = await filename(import.meta.url)
+```

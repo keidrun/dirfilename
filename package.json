@@ -9,6 +9,10 @@
     ".": {
       "types": "./build/index.d.ts",
       "default": "./build/index.js"
+    },
+    "./async": {
+      "types": "./build/async/index.d.ts",
+      "default": "./build/async/index.js"
     }
   },
   "scripts": {
@@ -45,10 +49,12 @@
     "url": "https://github.com/keidrun/dirfilename.git"
   },
   "keywords": [
+    "__dirname",
+    "__filename",
     "dirname",
     "filename",
-    "esm",
-    "import.meta"
+    "import.meta.url",
+    "esm"
   ],
   "author": "keidrun",
   "license": "MIT",
