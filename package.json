@@ -30,9 +30,8 @@
     "format": "prettier --write '**/*.{js,ts,json}'",
     "watch": "vitest watch --coverage",
     "test": "vitest run --coverage",
-    "test-ci": "vitest related src/index.ts --coverage --run",
-    "build-clean": "rimraf ./build",
-    "build": "tsc",
+    "test-ci": "vitest related src/index.ts src/async/index.ts --coverage --run",
+    "build": "rimraf ./build && tsc",
     "semantic-release": "semantic-release"
   },
   "lint-staged": {
