@@ -9,3 +9,4 @@ jest.config.js
 jest.config.cjs
 commitlint.config.js
 commitlint.config.cjs
+vite.config.ts
